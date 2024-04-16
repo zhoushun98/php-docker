@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM php:7.4-apache
 
 ENV TZ=Asia/Shanghai LANG=en_US.utf8
 
