@@ -13,7 +13,10 @@ RUN apt-get update && apt-get install -y \
   ; \
   rm -rf /var/lib/apt/lists/*
 
-COPY --chown=www-data:www-data ./maccms /usr/src/maccms
+RUN curl -fsSLOJ https://github.com/magicblack/maccms10/archive/refs/tags/V2024.1000.4000.tar.gz; \
+    tar zxf maccms10-2024.1000.4000.tar.gz; \
+    mv maccms10-2024.1000.4000 /usr/src/maccms; \
+    rm -rf maccms10-2024.1000.4000.tar.gz
 
 WORKDIR /var/www/html
 VOLUME /var/www/html
