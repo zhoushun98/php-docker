@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+
+  maccms:
+    image: zhoushun98/maccms10
+    build:
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - ./maccms:/var/www/html
+
+  mysql:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_DATABASE: maccms
+      MYSQL_USER: maccms
+      MYSQL_PASSWORD: maccms
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./mysql:/var/lib/mysql
