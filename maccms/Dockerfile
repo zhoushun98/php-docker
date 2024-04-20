@@ -7,6 +7,8 @@ RUN set -eu; \
     libjpeg62-turbo-dev \
     libpng-dev \
     libzip-dev \
+    zip \
+    unzip \
   && docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install -j$(nproc) \
       gd \
@@ -18,7 +20,9 @@ RUN set -eu; \
 RUN curl -fsSLOJ https://github.com/magicblack/maccms10/archive/refs/tags/V2024.1000.4000.tar.gz; \
     tar zxf maccms10-2024.1000.4000.tar.gz; \
     mv maccms10-2024.1000.4000 /usr/src/maccms; \
-    rm -rf maccms10-2024.1000.4000.tar.gz
+    rm -rf maccms10-2024.1000.4000.tar.gz; \
+    curl -fsSL https://raw.githubusercontent.com/zhoushun98/php-docker/main/maccms/DYXS2.zip -o /usr/src/maccms/template/DYXS2.zip; \
+    cd /usr/src/maccms/template/ && unzip DYXS2.zip && rm -rf DYXS2.zip
 
 WORKDIR /var/www/html
 VOLUME /var/www/html
