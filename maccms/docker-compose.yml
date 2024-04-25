@@ -19,6 +19,8 @@ services:
     restart: always
     ports:
       - 3306:3306
+    command: 
+      - --skip-log-bin
     environment:
       TZ: Asia/Shanghai
       MYSQL_DATABASE: maccms
