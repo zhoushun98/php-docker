@@ -17,10 +17,10 @@ RUN set -eu; \
   ; \
   rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSLOJ https://github.com/magicblack/maccms10/archive/refs/tags/V2024.1000.4000.tar.gz; \
-    tar zxf maccms10-2024.1000.4000.tar.gz; \
-    mv maccms10-2024.1000.4000 /usr/src/maccms; \
-    rm -rf maccms10-2024.1000.4000.tar.gz; \
+RUN curl -fsSLOJ https://github.com/magicblack/maccms10/archive/refs/tags/V2024.1000.4010.tar.gz; \
+    tar zxf maccms10-2024.1000.4010.tar.gz; \
+    mv maccms10-2024.1000.4010 /usr/src/maccms; \
+    rm -rf maccms10-2024.1000.4010.tar.gz; \
     curl -fsSL https://raw.githubusercontent.com/zhoushun98/php-docker/main/maccms/DYXS2.zip -o /usr/src/maccms/template/DYXS2.zip; \
     cd /usr/src/maccms/template/ && unzip DYXS2.zip && rm -rf DYXS2.zip
 
