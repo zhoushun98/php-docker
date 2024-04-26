@@ -25,7 +25,7 @@ services:
       TZ: Asia/Shanghai
       MYSQL_DATABASE: maccms
       MYSQL_USER: maccms
-      MYSQL_PASSWORD: maccms
+      MYSQL_PASSWORD: Eiqe8WjTH8dA
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - ./mysql:/var/lib/mysql
