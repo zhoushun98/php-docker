@@ -16,7 +16,7 @@ RUN set -eu; \
   ; \
   rm -rf /var/lib/apt/lists/*
 
-ADD --chown=33:33 ./maccms10.tar.xz /usr/src/maccms
+ADD --chown=33:33 ./maccms10-v2024.1000.4020.tar.xz /usr/src/maccms
 
 WORKDIR /var/www/html
 VOLUME /var/www/html
